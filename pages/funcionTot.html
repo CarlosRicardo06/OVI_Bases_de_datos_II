@@ -10,7 +10,17 @@
         <div class="menu">
             <ul>
                 <a href="../index.html">Inicio</a>
-                <a href="lecturas.html">Lecturas</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Lecturas</a>
+                    <div class="dropdown-content">
+                        <a href="funcionTot.html">Funciones de Totalización</a>
+                        <a href="agrupacionDatos.html">Agrupación de Datos</a>
+                        <a href="subconsultas.html">Subconsultas</a>
+                        <a href="funciones.html">Funciones</a>
+                        <a href="procedimientos.html">Procedimientos Almacenados</a>
+                        <a href="disparadores.html">Disparadores</a>
+                    </div>
+                </div>
                 <a href="multimedia.html">Multimedia</a>
                 <a href="actividades.html">Actividades</a>
                 <a href="autores.html">Autores</a>
@@ -79,19 +89,14 @@ select max(precio) from libros;
             <div class="sidebar">
                 <h2>Temas de Lectura</h2>
                 <ul class="sidebar-list">
-                    <li><a href="#funciones-totalizacion">Funciones de
-                            Totalización</a></li>
-                    <li><a href="#agrupacion-datos">Agrupación de
-                            Datos</a></li>
-                    <li><a href="#subconsultas">Subconsultas</a></li>
-                    <li><a href="#funciones">Funciones</a></li>
-                    <li><a
-                            href="#procedimientos">Procedimientos
-                            Almacenados</a></li>
-                    <li><a
-                            href="#disparadores">Disparadores</a></li>
+                    <li><a href="funcionTot.html" class="active">Funciones de Totalización</a></li>
+                    <li><a href="agrupacionDatos.html">Agrupación de Datos</a></li>
+                    <li><a href="subconsultas.html">Subconsultas</a></li>
+                    <li><a href="funciones.html">Funciones</a></li>
+                    <li><a href="procedimientos.html">Procedimientos Almacenados</a></li>
+                    <li><a href="disparadores.html">Disparadores</a></li>
                 </ul>
-
+                
                 <div class="sidebar-box">
                     <h3>Recursos de Aprendizaje</h3>
                     <p>Complementa tu estudio con estos recursos:</p>
@@ -102,13 +107,12 @@ select max(precio) from libros;
                         <li>Ejercicios prácticos</li>
                     </ul>
                 </div>
-
+                
                 <div class="sidebar-box">
                     <h3>Glosario de Términos</h3>
                     <dl>
                         <dt>SQL</dt>
-                        <dd>Lenguaje de consulta estructurado para bases de
-                            datos relacionales</dd>
+                        <dd>Lenguaje de consulta estructurado para bases de datos relacionales</dd>
                         <dt>SGBD</dt>
                         <dd>Sistema Gestor de Bases de Datos</dd>
                         <dt>DDL</dt>
