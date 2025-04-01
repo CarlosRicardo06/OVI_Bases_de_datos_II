@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lecturas - Bases de Datos 2</title>
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body>
+        <div class="menu">
+            <ul>
+                <a href="index.html">Inicio</a>
+                <a href="pages/lecturas.html">Lecturas</a>
+                <a href="pages/multimedia.html">Multimedia</a>
+                <a href="pages/actividades.html">Actividades</a>
+                <a href="pages/autores.html">Autores</a>
+            </ul>
+        </div>
+        <div class="banner">
+            <h2>OVI</h2>
+            <h1>Bases de datos II</h1>
+        </div>
+        <div class="container">
+            <div class="content">
+                <h1>Lecturas - Conceptos Avanzados de Bases de Datos</h1>
+
+                <section id="agrupacion-datos">
+                    <h2>Agrupación de Datos</h2>
+
+                    <p>La agrupación de datos permite organizar y analizar
+                        información basada en valores comunes en una o más
+                        columnas. La cláusula GROUP BY es la herramienta
+                        principal para realizar esta operación en SQL.</p>
+
+                    <h3>Conceptos Clave</h3>
+                    <ul>
+                        <li><strong>GROUP BY:</strong> Agrupa filas que tienen
+                            los mismos valores en columnas especificadas.</li>
+                        <li><strong>HAVING:</strong> Filtra grupos basados en
+                            condiciones (similar a WHERE pero para grupos).</li>
+                        <li><strong>Funciones de agregación:</strong> Se aplican
+                            a cada grupo de datos.</li>
+                    </ul>
+
+                    <h3>Ejemplos de Uso</h3>
+                    <div class="code-block">
+                        <pre>
+-- Encontrar el número total de pedidos de cada cliente que ha realizado más de 3 pedidos
+SELECT customer_id, COUNT(order_id) AS num_orders
+FROM orders
+GROUP BY customer_id
+HAVING COUNT(order_id) > 3;
+
+-- Calcular el importe total de ventas de la categoria de un producto donde el importe de
+ ventas promedio sea mayor a $500
+ SELECT product_category, SUM(sales_amount) AS total_sales
+ FROM sales
+ GROUP BY product_category
+ HAVING AVG(sales_amount) > 500;
+ 
+                        </pre>
+                    </div>
+
+                    <p>La agrupación de datos es esencial para el análisis de
+                        información y la generación de informes resumidos que
+                        ayudan en la toma de decisiones basada en datos.</p>
+
+                    <p class="citation">Geekster. (s.f.). Group By and Having
+                        Clause in SQL - A Beginner’s Guide. Geekster. Recuperado
+                        de <a
+                            href="https://www.geekster.in/articles/group-by-having-clause-in-sql/"
+                            target="_blank">geekster.in</a>
+                    </p>
+                </section>
+            </div>
+            <div class="sidebar">
+                <h2>Temas de Lectura</h2>
+                <ul class="sidebar-list">
+                    <li><a href="#funciones-totalizacion">Funciones de
+                            Totalización</a></li>
+                    <li><a href="#agrupacion-datos">Agrupación de
+                            Datos</a></li>
+                    <li><a href="#subconsultas">Subconsultas</a></li>
+                    <li><a href="#funciones">Funciones</a></li>
+                    <li><a
+                            href="#procedimientos">Procedimientos
+                            Almacenados</a></li>
+                    <li><a
+                            href="#disparadores">Disparadores</a></li>
+                </ul>
+
+                <div class="sidebar-box">
+                    <h3>Recursos de Aprendizaje</h3>
+                    <p>Complementa tu estudio con estos recursos:</p>
+                    <ul>
+                        <li>Documentación oficial de SQL</li>
+                        <li>Tutoriales interactivos</li>
+                        <li>Ejemplos de código</li>
+                        <li>Ejercicios prácticos</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-box">
+                    <h3>Glosario de Términos</h3>
+                    <dl>
+                        <dt>SQL</dt>
+                        <dd>Lenguaje de consulta estructurado para bases de
+                            datos relacionales</dd>
+                        <dt>SGBD</dt>
+                        <dd>Sistema Gestor de Bases de Datos</dd>
+                        <dt>DDL</dt>
+                        <dd>Lenguaje de Definición de Datos</dd>
+                        <dt>DML</dt>
+                        <dd>Lenguaje de Manipulación de Datos</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Derechos reservados</p>
+            <p>Desarrollado para el curso de Bases de Datos II</p>
+        </div>
+    </body>
+</html>

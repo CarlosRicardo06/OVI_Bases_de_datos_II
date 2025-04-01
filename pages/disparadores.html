@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lecturas - Bases de Datos 2</title>
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body>
+        <div class="menu">
+            <ul>
+                <a href="index.html">Inicio</a>
+                <a href="pages/lecturas.html">Lecturas</a>
+                <a href="pages/multimedia.html">Multimedia</a>
+                <a href="pages/actividades.html">Actividades</a>
+                <a href="pages/autores.html">Autores</a>
+            </ul>
+        </div>
+        <div class="banner">
+            <h2>OVI</h2>
+            <h1>Bases de datos II</h1>
+        </div>
+        <div class="container">
+            <div class="content">
+                <h1>Lecturas - Conceptos Avanzados de Bases de Datos</h1>
+
+                <section id="disparadores">
+                    <h2>Disparadores (Triggers)</h2>
+                    <img src="img/trigger.jpg"
+                        alt="Diagrama de disparadores" class="section-image">
+
+                    <p>Los disparadores (o triggers) son objetos de base de
+                        datos que se ejecutan automáticamente en respuesta a
+                        ciertos eventos sobre una tabla o vista. Actúan como
+                        guardianes de la integridad de los datos, aplicando
+                        reglas de negocio complejas que no pueden implementarse
+                        mediante restricciones declarativas.</p>
+                    <p>
+                        ¿Cuándo se dispara un trigger - Momento del disparo?
+                        <li>
+                            BEFORE (ANTES) , AFTER (DESPUÉS) (de la
+                            operación a
+                            realizar : INSERT, DELETE o UPDATE)
+                        </li>
+                        <li>
+                            Esto nos da 6 posibilidades : BEFORE INSERT,
+                            AFTER
+                            INSERT, BEFORE DELETE, AFTER DELETE, BEFORE
+                            UPDATE,
+                            AFTER UPDATE
+                        </li>
+                    </p>
+                    <h3>Ejemplos de Disparadores</h3>
+                    <div class="code-block">
+                        <pre>
+-- Trigger para que cada vez que se modifique el precio de un artículo se debe 
+guardar en precio la diferencia.
+DELIMITER $$
+DROP trigger IF EXISTS dirPrecio $$
+CREATE trigger dirPrecio BEFORE UPDATE on articulos
+FOR EACH ROW
+BEGIN
+    UPDATE copiaArticulos SET precio=NEW.precio-OLD.precio WHERE  
+    cod_art=OLD.cod_art;
+END $$
+DELIMITER ;
+</pre>
+                    </div>
+
+                    <p>Los disparadores son herramientas poderosas, pero deben
+                        usarse con precaución, ya que pueden afectar el
+                        rendimiento de la base de datos si no se implementan
+                        correctamente. Es importante considerar alternativas
+                        como restricciones declarativas o procedimientos
+                        almacenados cuando sea posible.</p>
+
+                    <p class="citation">Stack Overflow en español. (s.f.). ¿Cómo
+                        funciona un trigger en MySQL? Stack Overflow. Recuperado
+                        de <a
+                            href="https://es.stackoverflow.com/questions/529961/c%C3%B3mo-funciona-un-trigger-en-mysql"
+                            target="_blank">stackoverflow.com</a></p>
+                </section>
+            </div>
+            <div class="sidebar">
+                <h2>Temas de Lectura</h2>
+                <ul class="sidebar-list">
+                    <li><a href="#funciones-totalizacion">Funciones de
+                            Totalización</a></li>
+                    <li><a href="#agrupacion-datos">Agrupación de
+                            Datos</a></li>
+                    <li><a href="#subconsultas">Subconsultas</a></li>
+                    <li><a href="#funciones">Funciones</a></li>
+                    <li><a
+                            href="#procedimientos">Procedimientos
+                            Almacenados</a></li>
+                    <li><a
+                            href="#disparadores">Disparadores</a></li>
+                </ul>
+
+                <div class="sidebar-box">
+                    <h3>Recursos de Aprendizaje</h3>
+                    <p>Complementa tu estudio con estos recursos:</p>
+                    <ul>
+                        <li>Documentación oficial de SQL</li>
+                        <li>Tutoriales interactivos</li>
+                        <li>Ejemplos de código</li>
+                        <li>Ejercicios prácticos</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-box">
+                    <h3>Glosario de Términos</h3>
+                    <dl>
+                        <dt>SQL</dt>
+                        <dd>Lenguaje de consulta estructurado para bases de
+                            datos relacionales</dd>
+                        <dt>SGBD</dt>
+                        <dd>Sistema Gestor de Bases de Datos</dd>
+                        <dt>DDL</dt>
+                        <dd>Lenguaje de Definición de Datos</dd>
+                        <dt>DML</dt>
+                        <dd>Lenguaje de Manipulación de Datos</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Derechos reservados</p>
+            <p>Desarrollado para el curso de Bases de Datos II</p>
+        </div>
+    </body>
+</html>

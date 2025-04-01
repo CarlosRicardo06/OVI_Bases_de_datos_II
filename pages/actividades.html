@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Actividades - Bases de Datos 2</title>
+        <link rel="stylesheet" href="/styles/styles.css">
+    </head>
+    <body>
+        <div class="menu">
+            <ul>
+                <a href="../index.html">Inicio</a>
+                <a href="lecturas.html">Lecturas</a>
+                <a href="multimedia.html">Multimedia</a>
+                <a href="actividades.html">Actividades</a>
+                <a href="autores.html">Autores</a>
+            </ul>
+        </div>
+        <div class="banner">
+            <h2>OVI</h2>
+            <h1>Bases de datos II</h1>
+        </div>
+        <div class="container">
+            <div class="content">
+                <h1>Actividades de Aprendizaje</h1>
+                <p>En esta sección encontrarás actividades interactivas
+                    diseñadas para reforzar los conceptos aprendidos en las
+                    lecturas y recursos multimedia. Estas actividades te
+                    ayudarán a evaluar tu comprensión y aplicar los
+                    conocimientos adquiridos.</p>
+
+                <section id="actividad1" class="actividad">
+                    <h2>Actividad 1: Cuestionario sobre Funciones de
+                        Totalización y Agrupación</h2>
+                    <div class="actividad-descripcion">
+                        <p>Responde las siguientes preguntas para evaluar tu
+                            comprensión sobre las funciones de totalización y
+                            agrupación de datos en SQL.</p>
+                    </div>
+
+                    <div class="cuestionario">
+                        <form id="quiz1" class="quiz-form">
+                            <div class="pregunta">
+                                <p><strong>1. ¿Cuál de las siguientes NO es una
+                                        función de totalización en
+                                        SQL?</strong></p>
+                                <div class="opciones">
+                                    <label><input type="radio" name="q1"
+                                            value="a"> a) COUNT()</label><br>
+                                    <label><input type="radio" name="q1"
+                                            value="b"> b) SUM()</label><br>
+                                    <label><input type="radio" name="q1"
+                                            value="c"> c) CONCAT()</label><br>
+                                    <label><input type="radio" name="q1"
+                                            value="d"> d) AVG()</label>
+                                </div>
+                            </div>
+
+                            <div class="pregunta">
+                                <p><strong>2. ¿Qué cláusula se utiliza para
+                                        filtrar grupos en una consulta con GROUP
+                                        BY?</strong></p>
+                                <div class="opciones">
+                                    <label><input type="radio" name="q2"
+                                            value="a"> a) WHERE</label><br>
+                                    <label><input type="radio" name="q2"
+                                            value="b"> b) HAVING</label><br>
+                                    <label><input type="radio" name="q2"
+                                            value="c"> c) FILTER</label><br>
+                                    <label><input type="radio" name="q2"
+                                            value="d"> d) GROUP FILTER</label>
+                                </div>
+                            </div>
+
+                            <div class="pregunta">
+                                <p><strong>3. ¿Qué función devuelve el valor más
+                                        alto en un conjunto de
+                                        valores?</strong></p>
+                                <div class="opciones">
+                                    <label><input type="radio" name="q3"
+                                            value="a"> a) TOP()</label><br>
+                                    <label><input type="radio" name="q3"
+                                            value="b"> b) HIGHEST()</label><br>
+                                    <label><input type="radio" name="q3"
+                                            value="c"> c) MAX()</label><br>
+                                    <label><input type="radio" name="q3"
+                                            value="d"> d) UPPER()</label>
+                                </div>
+                            </div>
+
+                            <div class="pregunta">
+                                <p><strong>4. Complete la siguiente consulta SQL
+                                        para obtener el promedio de salario por
+                                        departamento, mostrando solo los
+                                        departamentos con un promedio superior a
+                                        3000:</strong></p>
+                                <div class="code-input">
+                                    <pre>SELECT departamento, ________(salario) AS salario_promedio
+FROM empleados
+________ departamento
+________ ________(salario) > 3000;</pre>
+                                    <textarea name="q4" rows="4"
+                                        placeholder="Completa la consulta SQL aquí..."></textarea>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn-verificar"
+                                onclick="document.getElementById('respuestas-quiz1').classList.toggle('mostrar')">Verificar
+                                Respuestas</button>
+                        </form>
+
+                        <div id="respuestas-quiz1" class="respuestas-correctas">
+                            <h3>Respuestas Correctas:</h3>
+
+                            <div class="respuesta-correcta">
+                                <p><strong>1. ¿Cuál de las siguientes NO es una
+                                        función de totalización en
+                                        SQL?</strong></p>
+                                <p>Respuesta correcta: c) CONCAT()</p>
+                                <p>CONCAT() es una función de cadena que
+                                    concatena valores, no una función de
+                                    totalización.</p>
+                            </div>
+
+                            <div class="respuesta-correcta">
+                                <p><strong>2. ¿Qué cláusula se utiliza para
+                                        filtrar grupos en una consulta con GROUP
+                                        BY?</strong></p>
+                                <p>Respuesta correcta: b) HAVING</p>
+                                <p>HAVING se utiliza para filtrar grupos después
+                                    de que se han formado con GROUP BY, mientras
+                                    que WHERE filtra filas antes de
+                                    agruparlas.</p>
+                            </div>
+
+                            <div class="respuesta-correcta">
+                                <p><strong>3. ¿Qué función devuelve el valor más
+                                        alto en un conjunto de
+                                        valores?</strong></p>
+                                <p>Respuesta correcta: c) MAX()</p>
+                                <p>MAX() es la función de agregación que
+                                    devuelve el valor más alto en un conjunto de
+                                    datos.</p>
+                            </div>
+
+                            <div class="respuesta-correcta">
+                                <p><strong>4. Complete la siguiente consulta
+                                        SQL:</strong></p>
+                                <pre>SELECT departamento, AVG(salario) AS salario_promedio
+FROM empleados
+GROUP BY departamento
+HAVING AVG(salario) > 3000;</pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="actividad2" class="actividad">
+                    <h2>Actividad 2: Ejercicio Práctico de Subconsultas</h2>
+                    <div class="actividad-descripcion">
+                        <p>En este ejercicio, deberás analizar y corregir las
+                            siguientes subconsultas SQL para que funcionen
+                            correctamente.</p>
+                    </div>
+
+                    <div class="ejercicio-practico">
+                        <div class="ejercicio">
+                            <h3>Ejercicio 1: Encontrar empleados con salario
+                                superior al promedio</h3>
+                            <p>La siguiente consulta tiene un error. Identifica
+                                y corrige el problema:</p>
+                            <div class="code-block">
+                                <pre>
+SELECT nombre, salario
+FROM empleados
+WHERE salario > (SELECT AVG salario FROM empleados);
+                              </pre>
+                            </div>
+                            <textarea id="respuesta1" class="respuesta" rows="3"
+                                placeholder="Escribe la consulta corregida aquí..."></textarea>
+                        </div>
+
+                        <div class="ejercicio">
+                            <h3>Ejercicio 2: Subconsulta correlacionada</h3>
+                            <p>Completa la siguiente subconsulta correlacionada
+                                para encontrar productos que tienen un precio
+                                mayor que el promedio de su categoría:</p>
+                            <div class="code-block">
+                                <pre>
+SELECT p.nombre_producto, p.precio, p.categoria
+FROM productos p
+WHERE p.precio > (
+  SELECT ________ 
+  FROM ________
+  WHERE ________ = p.categoria
+);
+                              </pre>
+                            </div>
+                            <textarea id="respuesta2" class="respuesta" rows="3"
+                                placeholder="Escribe la consulta completa aquí..."></textarea>
+                        </div>
+
+                        <button type="button" class="btn-verificar"
+                            onclick="document.getElementById('respuestas-subconsultas').classList.toggle('mostrar')">Verificar
+                            Respuestas</button>
+
+                        <div id="respuestas-subconsultas"
+                            class="respuestas-correctas">
+                            <h3>Respuestas Correctas:</h3>
+
+                            <div class="respuesta-correcta">
+                                <p><strong>Ejercicio 1: Encontrar empleados con
+                                        salario superior al
+                                        promedio</strong></p>
+                                <p>La consulta corregida es:</p>
+                                <pre>SELECT nombre, salario
+FROM empleados
+WHERE salario > (SELECT AVG(salario) FROM empleados);</pre>
+                                <p>El error estaba en la función AVG, que
+                                    necesita paréntesis: AVG(salario) en lugar
+                                    de AVG salario.</p>
+                            </div>
+
+                            <div class="respuesta-correcta">
+                                <p><strong>Ejercicio 2: Subconsulta
+                                        correlacionada</strong></p>
+                                <p>La consulta completa es:</p>
+                                <pre>SELECT p.nombre_producto, p.precio, p.categoria
+FROM productos p
+WHERE p.precio > (
+  SELECT AVG(precio) 
+  FROM productos
+  WHERE categoria = p.categoria
+);</pre>
+                                <p>Esta subconsulta correlacionada encuentra
+                                    productos con precio superior al promedio de
+                                    su categoría.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="actividad3" class="actividad">
+                    <h2>Actividad 3: Procedimientos Almacenados y
+                        Disparadores</h2>
+                    <div class="actividad-descripcion">
+                        <p>En esta actividad, responderás preguntas teóricas y
+                            completarás código relacionado con procedimientos
+                            almacenados y disparadores.</p>
+                    </div>
+
+                    <div class="cuestionario">
+                        <form id="quiz3" class="quiz-form">
+                            <div class="pregunta">
+                                <p><strong>1. ¿Cuál es la principal diferencia
+                                        entre un procedimiento almacenado y una
+                                        función en SQL?</strong></p>
+                                <div class="opciones">
+                                    <label><input type="radio" name="q1"
+                                            value="a"> a) Los procedimientos
+                                        almacenados pueden modificar datos, las
+                                        funciones solo pueden
+                                        leerlos</label><br>
+                                    <label><input type="radio" name="q1"
+                                            value="b"> b) Las funciones siempre
+                                        devuelven un valor, los procedimientos
+                                        almacenados no
+                                        necesariamente</label><br>
+                                    <label><input type="radio" name="q1"
+                                            value="c"> c) Los procedimientos
+                                        almacenados se ejecutan automáticamente,
+                                        las funciones deben ser
+                                        llamadas</label><br>
+                                    <label><input type="radio" name="q1"
+                                            value="d"> d) Las funciones pueden
+                                        tener parámetros de entrada y salida,
+                                        los procedimientos solo de
+                                        entrada</label>
+                                </div>
+                            </div>
+
+                            <div class="pregunta">
+                                <p><strong>2. ¿Qué tipo de disparador (trigger)
+                                        se ejecuta antes de que se realice una
+                                        operación?</strong></p>
+                                <div class="opciones">
+                                    <label><input type="radio" name="q2"
+                                            value="a"> a) AFTER
+                                        Trigger</label><br>
+                                    <label><input type="radio" name="q2"
+                                            value="b"> b) BEFORE
+                                        Trigger</label><br>
+                                    <label><input type="radio" name="q2"
+                                            value="c"> c) INSTEAD OF
+                                        Trigger</label><br>
+                                    <label><input type="radio" name="q2"
+                                            value="d"> d) FOR EACH
+                                        Trigger</label>
+                                </div>
+                            </div>
+
+                            <div class="pregunta">
+                                <p><strong>3. Complete el siguiente
+                                        procedimiento almacenado que actualiza
+                                        el estado de un pedido a "Enviado" y
+                                        registra la fecha de envío:</strong></p>
+                                <div class="code-input">
+                                    <pre>
+CREATE PROCEDURE sp_EnviarPedido(
+  IN p_pedido_id INT
+)
+BEGIN
+  -- Declarar variables
+  DECLARE v_existe INT;
+  
+  -- Verificar si el pedido existe
+  SELECT COUNT(*) INTO v_existe
+  FROM pedidos
+  WHERE pedido_id = p_pedido_id;
+  
+  IF v_existe > 0 THEN
+    -- Actualizar el estado del pedido
+    ________ pedidos
+    SET estado = '________', 
+        fecha_envio = ________
+    WHERE pedido_id = ________;
+    
+    -- Mostrar mensaje de éxito
+    SELECT 'Pedido actualizado correctamente' AS mensaje;
+  ELSE
+    -- Mostrar mensaje de error
+    SELECT 'El pedido no existe' AS mensaje;
+  END IF;
+END;</pre>
+                                    <textarea name="q4" rows="4"
+                                        placeholder="Completa el código aquí..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="pregunta">
+                                <p><strong>4. Complete el siguiente disparador
+                                        que registra un historial de cambios de
+                                        precio en productos:</strong></p>
+                                <div class="code-input">
+                                    <pre>
+CREATE TRIGGER tr_HistorialPrecios
+________ UPDATE ON productos
+FOR EACH ROW
+BEGIN
+  -- Insertar registro en el historial solo si el precio cambió
+  IF ________.precio != ________.precio THEN
+    INSERT INTO historial_precios (
+      producto_id, 
+      precio_anterior, 
+      precio_nuevo, 
+      fecha_cambio, 
+      usuario
+    )
+    VALUES (
+      ________.producto_id,
+      ________.precio,
+      ________.precio,
+      NOW(),
+      CURRENT_USER()
+    );
+  END IF;
+END;</pre>
+                                    <textarea name="q5" rows="4"
+                                        placeholder="Completa el código aquí..."></textarea>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn-verificar"
+                                onclick="document.getElementById('respuestas-quiz3').classList.toggle('mostrar')">Verificar
+                                Respuestas</button>
+                        </form>
+
+                        <div id="respuestas-quiz3" class="respuestas-correctas">
+                            <h3>Respuestas Correctas:</h3>
+
+                            <div class="respuesta-correcta">
+                                <p><strong>1. ¿Cuál es la principal diferencia
+                                        entre un procedimiento almacenado y una
+                                        función en SQL?</strong></p>
+                                <p>Respuesta correcta: b) Las funciones siempre
+                                    devuelven un valor, los procedimientos
+                                    almacenados no necesariamente</p>
+                                <p>Las funciones en SQL siempre deben devolver
+                                    un valor, mientras que los procedimientos
+                                    almacenados pueden o no devolver valores.
+                                    Además, los procedimientos pueden modificar
+                                    datos y las funciones generalmente están
+                                    limitadas a operaciones de lectura.</p>
+                            </div>
+
+                            <div class="respuesta-correcta">
+                                <p><strong>2. ¿Qué tipo de disparador (trigger)
+                                        se ejecuta antes de que se realice la
+                                        operación DML?</strong></p>
+                                <p>Respuesta correcta: b) BEFORE Trigger</p>
+                                <p>Los disparadores BEFORE se ejecutan antes de
+                                    que se realice la operación DML (INSERT,
+                                    UPDATE, DELETE), permitiendo validar o
+                                    modificar los datos antes de que se apliquen
+                                    los cambios.</p>
+                            </div>
+
+                            <div class="respuesta-correcta">
+                                <p><strong>3. Complete el siguiente
+                                        procedimiento almacenado:</strong></p>
+                                <pre>
+CREATE PROCEDURE sp_EnviarPedido(
+  IN p_pedido_id INT
+)
+BEGIN
+  -- Declarar variables
+  DECLARE v_existe INT;
+  
+  -- Verificar si el pedido existe
+  SELECT COUNT(*) INTO v_existe
+  FROM pedidos
+  WHERE pedido_id = p_pedido_id;
+  
+  IF v_existe > 0 THEN
+    -- Actualizar el estado del pedido
+    UPDATE pedidos
+    SET estado = 'Enviado', 
+        fecha_envio = NOW()
+    WHERE pedido_id = p_pedido_id;
+    
+    -- Mostrar mensaje de éxito
+    SELECT 'Pedido actualizado correctamente' AS mensaje;
+  ELSE
+    -- Mostrar mensaje de error
+    SELECT 'El pedido no existe' AS mensaje;
+  END IF;
+END;</pre>
+                            </div>
+
+                            <div class="respuesta-correcta">
+                                <p><strong>4. Complete el siguiente
+                                        disparador:</strong></p>
+                                <pre>
+CREATE TRIGGER tr_HistorialPrecios
+AFTER UPDATE ON productos
+FOR EACH ROW
+BEGIN
+  -- Insertar registro en el historial solo si el precio cambió
+  IF OLD.precio != NEW.precio THEN
+    INSERT INTO historial_precios (
+      producto_id, 
+      precio_anterior, 
+      precio_nuevo, 
+      fecha_cambio, 
+      usuario
+    )
+    VALUES (
+      NEW.producto_id,
+      OLD.precio,
+      NEW.precio,
+      NOW(),
+      CURRENT_USER()
+    );
+  END IF;
+END;</pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="sidebar">
+                <h2>Actividades</h2>
+                <ul class="sidebar-list">
+                    <li><a href="#actividad1">Cuestionario sobre Funciones de
+                            Totalización</a></li>
+                    <li><a href="#actividad2">Ejercicio de Subconsultas</a></li>
+                    <li><a href="#actividad3">Procedimientos Almacenados y
+                            Disparadores</a></li>
+                </ul>
+
+                <div class="sidebar-box">
+                    <h3>Instrucciones</h3>
+                    <p>Para completar las actividades:</p>
+                    <ul>
+                        <li>Lee cuidadosamente cada enunciado</li>
+                        <li>Completa todas las preguntas o ejercicios</li>
+                        <li>Utiliza la sintaxis correcta de SQL</li>
+                        <li>Haz clic en "Verificar Respuestas" para ver las
+                            soluciones</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-box">
+                    <h3>Recursos Útiles</h3>
+                    <ul>
+                        <li>Revisa las secciones de lectura</li>
+                        <li>Consulta los videos de la sección multimedia</li>
+                        <li>Utiliza la documentación oficial de SQL</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Derechos reservados</p>
+            <p>Desarrollado para el curso de Bases de Datos II</p>
+        </div>
+    </body>
+</html>
